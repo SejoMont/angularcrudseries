@@ -6,7 +6,7 @@ import { Series } from '../models/series';
 import { Personajes } from '../models/personajes';
 @Injectable()
 export class ServiceSeries {
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) { }
 
   getSeries(): Observable<any> {
     var request = 'api/series';
@@ -16,26 +16,26 @@ export class ServiceSeries {
   }
 
   findSerie(id: string): Observable<any> {
-    var request = 'api/series/'+id;
+    var request = 'api/series/' + id;
     var url = environment.urlApiSeries + request
 
     return this._http.get(url);
   }
 
-  getPersonajesSerie(id: string):Observable<any> {
+  getPersonajesSerie(id: string): Observable<any> {
     var request = '/api/Series/PersonajesSerie/' + id;
     var url = environment.urlApiSeries + request
 
     return this._http.get(url);
   }
 
-  addPersonaje(personaje: Personajes): Observable<any>{
+  addPersonaje(personaje: Personajes): Observable<any> {
     // debemos convertir el onjeto class departamento a json
     var json = JSON.stringify(personaje);
     // vamos a enviar un objeto json, por lo que debemos indicar
     // en la peticion el formato de dicho objeto(con headers)
     var header = new HttpHeaders().set('content-type', 'application/json');
-    
+
     var request = 'api/personajes';
     var url = environment.urlApiSeries + request;
 
@@ -49,12 +49,14 @@ export class ServiceSeries {
     return this._http.get(url);
   }
 
-  modificarPersonaje(idPersonaje: string, idSerie: string): Observable<any> {
-      var request = '/api/Series/Personajes/' + idPersonaje + "/" + idSerie;
-      var url = environment.urlApiSeries + request
-  
-      var header = new HttpHeaders().set('content-type', 'application/json');
-  
-      return this._http.put(url, { headers: header });
+  modificarPersonaje(idPersonaje: number, idSerie: number): Observable<any> {
+    var request = 'api/Personajes/' + idPersonaje + "/" + idSerie;
+    var url = environment.urlApiSeries + request;
+
+    console.log(url)
+
+    var header = new HttpHeaders().set('content-type', 'application/json');
+
+    return this._http.put(url, {}, { headers: header });
   }
 }
