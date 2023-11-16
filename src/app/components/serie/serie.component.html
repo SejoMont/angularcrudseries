@@ -1,0 +1,17 @@
+<div>
+    <div class="card" style="width: 18rem; margin: 0 auto;" *ngIf="serie">
+        <img src="{{serie.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{serie.nombre}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Puntuacion: {{serie.puntuacion}}</li>
+            <li class="list-group-item">Año: {{serie.anyo}}</li>
+        </ul>
+        <div class="card-body text-center">
+            <a [routerLink]="['/personajes/',serie.idSerie]" class="btn btn-outline-info">Personajes</a>
+        </div>
+    </div>
+</div>

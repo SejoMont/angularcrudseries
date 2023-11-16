@@ -1,0 +1,22 @@
+<div style="width: 80%; margin: 0 auto;">
+    <h1>Insertar Departamento</h1>
+    <form #insertForm="ngForm">
+        <label >ID</label>
+        <input type="number" class="form-control" #cajaid name="cajaid">
+        <label >Nombre</label>
+        <input type="text" class="form-control" #cajanombre name="cajanombre">
+        <label >Imagen</label>
+        <input type="text" class="form-control" #cajaimagen name="cajaimagen">
+        <label>Serie:</label>
+        <select class="form-control" #cajaserie name="cajaserie">
+            <option value="{{serie.idSerie}}" *ngFor="let serie of series">
+                {{serie.nombre}}
+            </option>
+        </select>
+        <div class="text-end">
+            <!-- <button class="btn btn-outline-success" (click)="InsertarDepartamento()">
+                Crear
+            </button> -->
+        </div>
+    </form>
+</div>
