@@ -12,6 +12,7 @@ import { ServiceSeries } from './services/service.series';
 import { SerieComponent } from './components/serie/serie.component';
 import { PersonajesserieComponent } from './components/personajesserie/personajesserie.component';
 import { NuevopersonajeComponent } from './components/nuevopersonaje/nuevopersonaje.component';
+import { ModificarpersonajeComponent } from './components/modificarpersonaje/modificarpersonaje.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NuevopersonajeComponent } from './components/nuevopersonaje/nuevoperson
     MenuComponent,
     SerieComponent,
     PersonajesserieComponent,
-    NuevopersonajeComponent
+    NuevopersonajeComponent,
+    ModificarpersonajeComponent
   ],
   imports: [
     BrowserModule,

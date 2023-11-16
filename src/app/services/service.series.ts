@@ -41,4 +41,20 @@ export class ServiceSeries {
 
     return this._http.post(url, json, { headers: header });
   }
+
+  getPersonajes(): Observable<any> {
+    var request = 'api/personajes';
+    var url = environment.urlApiSeries + request;
+
+    return this._http.get(url);
+  }
+
+  modificarPersonaje(idPersonaje: string, idSerie: string): Observable<any> {
+      var request = '/api/Series/Personajes/' + idPersonaje + "/" + idSerie;
+      var url = environment.urlApiSeries + request
+  
+      var header = new HttpHeaders().set('content-type', 'application/json');
+  
+      return this._http.put(url, { headers: header });
+  }
 }

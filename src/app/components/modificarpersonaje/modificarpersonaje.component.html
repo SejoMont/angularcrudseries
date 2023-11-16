@@ -1,0 +1,23 @@
+<div style="width: 80%; margin: 0 auto;">
+    <h1>Modificar Personaje</h1>
+    <form #updateForm="ngForm">
+        <label>Personaje:</label>
+        <select class="form-control" #cajapersonaje name="cajapersonaje">
+            <option value="{{personaje.idSerie}}" *ngFor="let personaje of personajes">
+                {{personaje.nombre}}
+            </option>
+        </select>
+        <label>Serie:</label>
+        <select class="form-control" #cajaserie name="cajaserie">
+            <option value="{{serie.idSerie}}" *ngFor="let serie of series">
+                {{serie.nombre}}
+            </option>
+        </select>
+        <br>
+        <div class="text-end">
+            <button class="btn btn-outline-warning" (click)="ModificarPersonaje()">
+                Modificar
+            </button>
+        </div> 
+    </form>
+</div>
