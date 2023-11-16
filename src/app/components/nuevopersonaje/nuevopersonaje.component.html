@@ -1,5 +1,5 @@
 <div style="width: 80%; margin: 0 auto;">
-    <h1>Insertar Departamento</h1>
+    <h1>Nuevo Personaje</h1>
     <form #insertForm="ngForm">
         <label >ID</label>
         <input type="number" class="form-control" #cajaid name="cajaid">
@@ -12,11 +12,11 @@
             <option value="{{serie.idSerie}}" *ngFor="let serie of series">
                 {{serie.nombre}}
             </option>
-        </select>
+        </select><br>
         <div class="text-end">
-            <!-- <button class="btn btn-outline-success" (click)="InsertarDepartamento()">
+            <button class="btn btn-outline-success" (click)="CrearPersonaje()">
                 Crear
-            </button> -->
+            </button>
         </div>
     </form>
 </div>
